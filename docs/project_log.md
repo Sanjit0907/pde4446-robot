@@ -28,6 +28,8 @@ Develop a motion-control system for the TI-RSLK MAX mobile robot that can comple
 
 ### Obstacle and platform notes
 
+- Route length: about **4.4 m**.
+- The robot must continue past the third stop, detect the cone, slow down, avoid it and return to the line (a Stage 2 `FINISHED` state is only a temporary test ending).
 - Coursework obstacle: plastic cone, approximately **130 × 130 × 165 mm**.
 - Platform reference: two-wheel mobile robot.
 - The obstacle-avoidance design currently planned uses a **fixed, forward-facing ultrasonic sensor**.
@@ -314,7 +316,7 @@ The cable was then removed from the robot for the physical straight-line check. 
 - The USB connection is also being used to send commands through the Serial Monitor.
 - The robot's straight-line test was affected by the USB cable physically pulling the chassis when the cable was positioned to the right.
 - For physical testing, the cable must not exert force on the robot. The successful straight-line check was performed with the cable removed from the robot.
-- The possibility of powering the Uno from the chassis board's regulated 5 V rail was discussed, but this has **not** been adopted or verified in the current setup.
+- Plan for the final stage only: power the Uno from the chassis board's 5 V rail and use the Uno **reset button as the start button** (the sketch must then start by itself a few seconds after boot, with a visible countdown). Not yet adopted or verified. Watch for Uno resets caused by supply dips when the motors start.
 - Do not connect external 5 V and USB power in a way that could cause supply contention or backfeeding. Verify the exact power arrangement before attempting simultaneous external power and USB serial communication.
 
 ---
@@ -488,7 +490,7 @@ Do not make a commit claiming a test passed until the test has actually been run
 | Stage 1: straight-line PI control | Tested / passed | Smooth straight movement after removing USB cable drag |
 | Encoder and wheel calibration | Pending | 720 counts/rev and 70 mm wheel diameter are provisional |
 | Stage 2: three controlled stops | Next | Non-blocking `millis()` state machine |
-| Stage 3: obstacle detection and slowdown | Not started | Fixed forward-facing ultrasonic sensor |
+| Stage 3: obstacle detection and slowdown | Not started | Ultrasonic sensor not yet connected or tested |
 | Stage 4: obstacle avoidance and recovery | Not started | Predetermined avoidance direction |
 | Stage 5: LED and full state-machine integration | Not started | Integrate after individual behaviours work |
 | Stage 6: final evaluation and documentation | Not started | Results, limitations, diagrams and demo |
@@ -511,6 +513,15 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ---
 
 ## 12. Change log
+
+### 16 November 2026 (update 2)
+
+- Team: Havinesh Kumar (M01152797) added.
+- Route length recorded as about 4.4 m. Cone must be detected and avoided after the stops.
+- T4 run length recorded as about 1 m, deviation not yet measured.
+- Test dates recorded as the 8-16 Nov period (exact dates not logged).
+- Ultrasonic sensor confirmed as not started.
+- Final start method: reset button, Uno powered from chassis 5 V (final stage only).
 
 ### 16 November 2026 (repository)
 
