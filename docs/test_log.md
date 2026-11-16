@@ -28,7 +28,7 @@ Then `MM_PER_TICK = 1000 / average(TICKS_L, TICKS_R)`, and
 PWM = 20, 30, 40, 60, 80. Straight-line fit gives `FF_OFFSET` and `FF_SLOPE`.
 Current values (8 and 0.18) are fitted to a single point and are a guess.
 
-## Stage 2 test checklist (not yet run)
+## Stage 2 test checklist (to use when Stage 2 is written)
 | Check | Result |
 |---|---|
 | Three stops happen, in order | |

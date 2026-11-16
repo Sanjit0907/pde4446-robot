@@ -500,7 +500,7 @@ Do not make a commit claiming a test passed until the test has actually been run
 | Hardware bring-up | Complete | Motors and both encoders working |
 | Stage 1: straight-line PI control | Tested / passed | Smooth straight movement after removing USB cable drag |
 | Encoder and wheel calibration | Pending | 720 counts/rev and 70 mm wheel diameter are provisional |
-| Stage 2: three controlled stops | Code written, UNTESTED | `firmware/stage2_controlled_stops/controlled_stops.ino` |
+| Stage 2: three controlled stops | Next | Non-blocking `millis()` state machine |
 | Stage 3: obstacle detection and slowdown | Not started | Ultrasonic sensor not yet connected or tested |
 | Stage 4: obstacle avoidance and recovery | Not started | Predetermined avoidance direction |
 | Stage 5: LED and full state-machine integration | Not started | Integrate after individual behaviours work |
@@ -528,11 +528,9 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ### 16 November 2026 (update 4)
 
 - Stop rule decided: time-based, 3 s drive / 1 s stop, from the wording of the brief.
-- Stage 2 sketch written (`controlled_stops.ino`), not yet run on hardware.
-- Start-up overshoot diagnosed: `BASE_PWM = 65` was more than twice the PWM the motors need at
-  120 mm/s (measured ~29). Replaced by a speed-dependent feedforward plus a 400 mm/s^2 target ramp.
-- Mode LEDs added on A0 (driving) and A1 (stopped); A2 reserved for obstacle mode.
-- `ROUTE_LENGTH_MM = 4400` added, but it depends on the uncalibrated `MM_PER_TICK`.
+- Start-up overshoot diagnosed: `BASE_PWM = 65` is more than twice the PWM the motors need at
+  120 mm/s (measured ~29). Fix to apply in Stage 2: speed-dependent feedforward plus a target ramp.
+- Proposed mode LED pins: A0 (driving), A1 (stopped), A2 (obstacle). Not yet wired.
 
 ### 16 November 2026 (update 3)
 

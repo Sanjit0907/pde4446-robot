@@ -14,7 +14,6 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 |---|---|
 | `firmware/teleop_test/` | Stage 0: open-loop keyboard test (motors + encoders sanity check) |
 | `firmware/stage1_straight_line/` | Stage 1: closed-loop PI wheel speed, straight line (tested) |
-| `firmware/stage2_controlled_stops/` | Stage 2: three 3 s legs with 1 s stops (untested) |
 | `tools/teleop.py` | PC keyboard client for `teleop_test` |
 | `docs/pinmap.md` | Which Uno pin goes to which chassis-board signal |
 | `docs/test_log.md` | Every test: date, setup, result (needed for marking) |
@@ -24,7 +23,7 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 - [x] Hardware bring-up – motors spin, encoders count
 - [x] Stage 1 – closed-loop straight line (functionally passed; calibration pending)
 - [ ] Calibration – counts/rev, wheel diameter
-- [ ] Stage 2 – three controlled stops (code written, untested)
+- [ ] Stage 2 – three controlled stops (next)
 - [ ] Stage 3 – ultrasonic detection and speed reduction
 - [ ] Stage 4 – obstacle avoidance and return to path
 - [ ] Stage 5 – state machine and LEDs
