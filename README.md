@@ -7,7 +7,7 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 | Name | Student ID | Role |
 |---|---|---|
 | Sanjit | M01142490 | firmware / bring-up |
-| (add members) | | |
+| Havinesh Kumar | M01152797 | role to be confirmed |
 
 ## Repository layout
 | Path | What it is |
