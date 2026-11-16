@@ -1,5 +1,7 @@
 # PDE4446 Motion Control – Coursework 1
 
+Repository: https://github.com/Sanjit0907/pde4446-robot
+
 Differential-drive robot (TI-RSLK MAX chassis + Arduino Uno). Goal: drive a straight route, stop 3 times for 1 s,
 detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 

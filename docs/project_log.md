@@ -496,7 +496,7 @@ Do not make a commit claiming a test passed until the test has actually been run
 
 | Stage | Status | Notes |
 |---|---|---|
-| Git repository | Created 16 Nov 2026 | Stage 1 baseline, pin map, test log committed |
+| Git repository | Live 16 Nov 2026 | github.com/Sanjit0907/pde4446-robot |
 | Hardware bring-up | Complete | Motors and both encoders working |
 | Stage 1: straight-line PI control | Tested / passed | Smooth straight movement after removing USB cable drag |
 | Encoder and wheel calibration | Pending | 720 counts/rev and 70 mm wheel diameter are provisional |
@@ -524,6 +524,20 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ---
 
 ## 12. Change log
+
+### 16 November 2026 (update 5) - status confirmed by Sanjit
+
+Working now:
+- Motors and both encoders working.
+- Robot drives in a straight line under closed-loop PI control.
+- Repository pushed to github.com/Sanjit0907/pde4446-robot.
+
+Remaining work, in order:
+1. Stop three times every three seconds along the route, waiting 1 s at each stop.
+2. Detect the randomly placed cone and reduce speed.
+3. Navigate around it.
+4. Return to the original path and to normal speed.
+5. LED indication for the operating modes (normal driving, stopping, obstacle avoidance).
 
 ### 16 November 2026 (update 4)
 
