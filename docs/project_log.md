@@ -483,6 +483,7 @@ Do not make a commit claiming a test passed until the test has actually been run
 
 | Stage | Status | Notes |
 |---|---|---|
+| Git repository | Created 16 Nov 2026 | Stage 1 baseline, pin map, test log committed |
 | Hardware bring-up | Complete | Motors and both encoders working |
 | Stage 1: straight-line PI control | Tested / passed | Smooth straight movement after removing USB cable drag |
 | Encoder and wheel calibration | Pending | 720 counts/rev and 70 mm wheel diameter are provisional |
@@ -510,6 +511,13 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ---
 
 ## 12. Change log
+
+### 16 November 2026 (repository)
+
+- Git repository created. Stage 1 sketch committed as `firmware/stage1_straight_line/straight_line_pid.ino`, unchanged.
+- Pin map committed in `docs/pinmap.md`; planned ultrasonic pins TRIG D9 / ECHO D7.
+- Stage 1 results copied into `docs/test_log.md` (T0-T4). Exact test dates still to be confirmed.
+- Open items: team member list, quantified straight-line data, calibration, start-up overshoot check, definition of behaviour after the third stop.
 
 ### 16 November 2026
 

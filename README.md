@@ -17,14 +17,17 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 | `tools/teleop.py` | PC keyboard client for `teleop_test` |
 | `docs/pinmap.md` | Which Uno pin goes to which chassis-board signal |
 | `docs/test_log.md` | Every test: date, setup, result (needed for marking) |
+| `docs/project_log.md` | Requirements, plan, status and change log |
 
 ## Stages
-- [x] Stage 0 – motors spin, encoders count
-- [ ] Stage 1 – closed-loop straight line (in progress)
-- [ ] Stage 2 – calibration (wheel diameter, counts/rev, track width)
-- [ ] Stage 3 – 3 stops, 1 s each
-- [ ] Stage 4 – ultrasonic cone detection and bypass
-- [ ] Stage 5 – status LEDs, final tuning, demo
+- [x] Hardware bring-up – motors spin, encoders count
+- [x] Stage 1 – closed-loop straight line (functionally passed; calibration pending)
+- [ ] Calibration – counts/rev, wheel diameter
+- [ ] Stage 2 – three controlled stops (next)
+- [ ] Stage 3 – ultrasonic detection and speed reduction
+- [ ] Stage 4 – obstacle avoidance and return to path
+- [ ] Stage 5 – state machine and LEDs
+- [ ] Stage 6 – evaluation, documentation, demo
 
 ## Rules for the team
 - One small change per commit. Message says *what* and *why*.
