@@ -15,3 +15,26 @@ corrected if the real dates are found (file timestamps, saved serial logs).
 ## Still needed for marking
 - Quantified straight-line result: sideways deviation over a known distance (route is about 4.4 m), repeated at least 3 times.
 - Calibration: counts per revolution and wheel circumference (see project log, section 5).
+
+## Calibration procedure (not yet done)
+`MM_PER_TICK` is assumed, so every distance and speed in mm is unverified.
+
+**C1 - distance scale.** Mark 1000 mm on the floor with tape. Press `r`, drive the robot from the
+start mark to the end mark, press `x`. Record `TICKS_L` and `TICKS_R`.
+Then `MM_PER_TICK = 1000 / average(TICKS_L, TICKS_R)`, and
+`COUNTS_PER_REV = (PI * 70) / MM_PER_TICK`.
+
+**C2 - feedforward fit.** With the wheels lifted, hold a fixed PWM and record the steady speed at
+PWM = 20, 30, 40, 60, 80. Straight-line fit gives `FF_OFFSET` and `FF_SLOPE`.
+Current values (8 and 0.18) are fitted to a single point and are a guess.
+
+## Stage 2 test checklist (not yet run)
+| Check | Result |
+|---|---|
+| Three stops happen, in order | |
+| Each driving leg is 3 s (from `# STATE ->` timestamps) | |
+| Each dwell is ~1000 ms (printed as `dwell NNN ms`) | |
+| Robot resumes after each stop | |
+| Robot keeps driving after the third stop | |
+| Start-up overshoot gone (peak VL/VR vs 120 target) | |
+| Serial stays responsive throughout | |
