@@ -1,0 +1,11 @@
+# Arduino / editor junk
+build/
+*.hex
+*.elf
+.vscode/
+# Python
+__pycache__/
+*.pyc
+# Raw serial logs are large; keep summaries in docs/test_log.md instead
+logs/*.log
+!logs/.gitkeep
