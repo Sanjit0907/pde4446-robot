@@ -324,6 +324,15 @@ The cable was then removed from the robot for the physical straight-line check. 
 
 ## 7. Stage 2 — Three controlled stops (next task)
 
+### Stop rule (decided 16 Nov 2026)
+
+The brief says *"stop three times every three seconds along the route"* - this is **time-based**.
+The robot drives for 3 s, stops for 1 s, three times, and then continues to the end of the route.
+At 120 mm/s the three stops fall at roughly 0.36 m, 0.72 m and 1.08 m of the 4.4 m route, i.e. in the
+first quarter. This is the literal reading of the brief and is what is implemented. If the module leader
+wants the stops spread over the whole route instead, either raise the cruise speed to about 365 mm/s or
+switch to a distance-based rule - only `DRIVE_LEG_MS` and `targetSpeed` need to change.
+
 ### Required sequence
 
 The robot should:
@@ -332,9 +341,10 @@ The robot should:
 2. Stop for 1 second.
 3. Resume forward driving for another 3 seconds.
 4. Repeat until it has completed three stops.
-5. Stop permanently after the third stop.
+5. Continue driving after the third stop (the cone comes later in the route).
 
-The intended interpretation is **three stop events**, each following a three-second active-driving interval. This results in three one-second pauses, followed by a final stop after the third pause.
+Three stop events, each after a three-second driving interval, giving three one-second pauses. After the
+third pause the robot resumes and drives on - it does not finish there.
 
 ### Planned implementation
 
@@ -490,7 +500,7 @@ Do not make a commit claiming a test passed until the test has actually been run
 | Hardware bring-up | Complete | Motors and both encoders working |
 | Stage 1: straight-line PI control | Tested / passed | Smooth straight movement after removing USB cable drag |
 | Encoder and wheel calibration | Pending | 720 counts/rev and 70 mm wheel diameter are provisional |
-| Stage 2: three controlled stops | Next | Non-blocking `millis()` state machine |
+| Stage 2: three controlled stops | Code written, UNTESTED | `firmware/stage2_controlled_stops/controlled_stops.ino` |
 | Stage 3: obstacle detection and slowdown | Not started | Ultrasonic sensor not yet connected or tested |
 | Stage 4: obstacle avoidance and recovery | Not started | Predetermined avoidance direction |
 | Stage 5: LED and full state-machine integration | Not started | Integrate after individual behaviours work |
@@ -514,6 +524,15 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ---
 
 ## 12. Change log
+
+### 16 November 2026 (update 4)
+
+- Stop rule decided: time-based, 3 s drive / 1 s stop, from the wording of the brief.
+- Stage 2 sketch written (`controlled_stops.ino`), not yet run on hardware.
+- Start-up overshoot diagnosed: `BASE_PWM = 65` was more than twice the PWM the motors need at
+  120 mm/s (measured ~29). Replaced by a speed-dependent feedforward plus a 400 mm/s^2 target ramp.
+- Mode LEDs added on A0 (driving) and A1 (stopped); A2 reserved for obstacle mode.
+- `ROUTE_LENGTH_MM = 4400` added, but it depends on the uncalibrated `MM_PER_TICK`.
 
 ### 16 November 2026 (update 3)
 
