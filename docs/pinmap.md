@@ -1,4 +1,4 @@
-# Pin map (as wired and used by `stage1_straight_pid`)
+# Pin map (as wired and used by `straight_line_pid`)
 
 | Uno pin | Chassis board signal | Function |
 |---|---|---|

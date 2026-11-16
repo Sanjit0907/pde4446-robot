@@ -13,7 +13,7 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 | Path | What it is |
 |---|---|
 | `firmware/teleop_test/` | Stage 0: open-loop keyboard test (motors + encoders sanity check) |
-| `firmware/stage1_straight_pid/` | Stage 1: closed-loop PI wheel speed, straight line |
+| `firmware/stage1_straight_line/` | Stage 1: closed-loop PI wheel speed, straight line |
 | `tools/teleop.py` | PC keyboard client for `teleop_test` |
 | `docs/pinmap.md` | Which Uno pin goes to which chassis-board signal |
 | `docs/test_log.md` | Every test: date, setup, result (needed for marking) |
