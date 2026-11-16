@@ -18,5 +18,5 @@ Notes
 - ELA/ERA are only on the 6-pin motor connectors, not on a header.
 - `teleop_test` uses different pins for DIRL (D7) and one shared nSLEEP (D11). This table is the source of truth;
   change `teleop_test` to match if it is used again.
-- D10 is taken by nSLEEP, so the HC-SR04 ECHO cannot use D10 (planned: TRIG D9, ECHO must move, e.g. A4/A5 or D7).
+- Planned HC-SR04 (not yet wired): TRIG D9, ECHO D7 (D10 is used by nSLEEP). HC-SR04 is powered from 5 V, so its 5 V ECHO is safe for the Uno.
 - Direction convention: DIR low = forward. `LEFT_ENC_INVERTED = true` was needed for the left encoder.
