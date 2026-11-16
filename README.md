@@ -6,8 +6,8 @@ detect a cone, slow down, bypass it, return to the line, show the mode on LEDs.
 ## Team
 | Name | Student ID | Role |
 |---|---|---|
-| Sanjit | M01142490 | firmware / bring-up |
-| Havinesh Kumar | M01152797 | role to be confirmed |
+| Sanjit | M01142490 | firmware / wiring |
+| Havinesh Kumar | M01152797 | Assembly of the robot |
 
 ## Repository layout
 | Path | What it is |
