@@ -29,6 +29,7 @@ Develop a motion-control system for the TI-RSLK MAX mobile robot that can comple
 ### Obstacle and platform notes
 
 - Route length: about **4.4 m**.
+- The cone is placed **on the robot's straight path** (centred on the line). The robot must avoid it and then continue along the same line.
 - The robot must continue past the third stop, detect the cone, slow down, avoid it and return to the line (a Stage 2 `FINISHED` state is only a temporary test ending).
 - Coursework obstacle: plastic cone, approximately **130 × 130 × 165 mm**.
 - Platform reference: two-wheel mobile robot.
@@ -513,6 +514,11 @@ Upload or add the latest working `straight_line_pid.ino` to the repository. Comm
 ---
 
 ## 12. Change log
+
+### 16 November 2026 (update 3)
+
+- Cone confirmed to be placed on the robot's path. Avoid it and rejoin the same line.
+- Raising the cruise speed to about 365 mm/s is NOT a requirement. Open decision: how to place the three stops (time-based at 120 mm/s vs evenly spaced along 4.4 m).
 
 ### 16 November 2026 (update 2)
 
