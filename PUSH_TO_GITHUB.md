@@ -34,3 +34,4 @@ git clone https://github.com/YOUR-USERNAME/pde4446-robot.git
 2. Source Control panel (branch icon, left bar) -> click `+` on the changed file.
 3. Type a message, e.g. `Tune KP to 0.3, left wheel now tracks`.
 4. Click Commit, then Sync Changes.
+5.
